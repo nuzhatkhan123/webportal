@@ -1,1 +1,95 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Cuboid</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+             background: url('c7.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .scene {
+            width: 300px;
+            height: 300px;
+            perspective: 900px;
+        }
+
+        .cuboid {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateCuboid 5s infinite linear;
+        }
+
+        .face {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            backface-visibility: hidden;
+        }
+
+        .front {
+            transform: translateZ(150px);
+        }
+
+        .back {
+            transform: rotateY(180deg) translateZ(150px);
+        }
+
+        .right {
+            transform: rotateY(90deg) translateZ(150px);
+        }
+
+        .left {
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+
+        .top {
+            transform: rotateX(90deg) translateZ(150px);
+        }
+
+        .bottom {
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes rotateCuboid {
+            from {
+                transform: rotateX(0) rotateY(0);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scene">
+        <div class="cuboid">
+            <div class="face front"><img src="c11.jpg" alt="Front Image"></div>
+            <div class="face back"><img src="c12.jpg" alt="Back Image"></div>
+            <div class="face right"><img src="c13.jpg" alt="Right Image"></div>
+            <div class="face left"><img src="c14.jpg" alt="Left Image"></div>
+            <div class="face top"><img src="c15.jpg" alt="Top Image"></div>
+            <div class="face bottom"><img src="c16.jpg" alt="Bottom Image"></div>
+        </div>
+    </div>
+    <script>
+        // No additional JavaScript is needed for basic rotation as the CSS animation handles it.
+    </script>
+</body>
+</html>
