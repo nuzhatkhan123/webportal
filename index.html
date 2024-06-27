@@ -9,17 +9,55 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column; /* Align content vertically */
             height: 100vh;
             margin: 0;
             background: url('https://scontent.fsxr1-1.fna.fbcdn.net/v/t39.30808-6/417795902_1478795329334932_4387025724980079310_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=vjO0pVrF5dsQ7kNvgHvjWhG&_nc_ht=scontent.fsxr1-1.fna&oh=00_AYCUyhxRzzCik63oMffIw2nfOgj0b6zgmann2Tm9zix-_w&oe=6682FD2E') no-repeat center center fixed;
             background-size: cover;
         }
 
+        .top-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 10px 0;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            position: absolute;
+            top: 0;
+            z-index: 1; /* Ensure the icons are above the background image */
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Adjust the space between icons */
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0); /* Semi-transparent white background */
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: rgba(0, 0, 0, 0); /* Darker on hover */
+        }
+
         .scene {
             width: 300px;
             height: 300px;
             perspective: 900px;
-            margin-top: 20px; /* Adjust margin-top to create a gap */
+            margin-top: 60px; /* Adjust margin-top to create space below the icons */
         }
 
         .cuboid {
@@ -28,7 +66,6 @@
             position: relative;
             transform-style: preserve-3d;
             animation: rotateCuboid 5s infinite linear;
-            top: 0; /* Align cuboid to the top */
         }
 
         .face {
@@ -103,6 +140,20 @@
     </style>
 </head>
 <body>
+    <div class="top-bar">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/irfan.kamran.3979" target="_blank"> <!-- Facebook icon and link -->
+                <img src="https://www.freeiconspng.com/uploads/fb-logo-icon-4.png" alt="Facebook">
+            </a>
+            <a href="#" target="_blank"> <!-- Instagram icon and link -->
+                <img src="https://static.vecteezy.com/system/resources/previews/012/493/083/original/instagram-logo-3d-illustration-free-png.png" alt="Instagram">
+            </a>
+            <a href="#" target="_blank"> <!-- Snapchat icon and link -->
+                <img src="https://tse3.mm.bing.net/th?id=OIP.hif8gWNvo06pcpK7BIqvtAHaHa&pid=Api&P=0&h=220" alt="Snapchat">
+            </a>
+        </div>
+    </div>
+
     <div class="scene">
         <div class="cuboid">
             <div class="face front"><img src="c1.jpg" alt="Front Image"></div>
